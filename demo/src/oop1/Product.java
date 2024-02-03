@@ -1,24 +1,27 @@
 package oop1;
 
 public class Product {
-	// Instance variables 
+	// Instance variables
 	private String name;
 	private int price;
-	
+
 	// Constructor
-	public Product(String n, int p) {
-		 name = n;
-		 price = p;
+	public Product(String name, int price) {
+		this.name = name;
+		this.price = price;
+	}
+
+	public Product(String name) {
+		this(name, 0);  // call another constructor 
 	}
 
 	// Methods
 	public void print() {
-		System.out.println(name);
-		System.out.println(price);
+		System.out.println(this.name);
+		System.out.println(this.price);
 	}
-	
+
 	public int getNetPrice() {
-		return  price + price * 12 / 100;
+		return this.price + this.price * 12 / 100;
 	}
 }
-
