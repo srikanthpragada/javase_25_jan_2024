@@ -11,8 +11,7 @@ public class TestProduct {
 		 System.out.println(p1.getNetPrice());
 	 
 		 //System.out.println(p1.name);
-
-		 new Product()
+ 
 	}
 
 }
