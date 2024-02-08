@@ -1,6 +1,6 @@
 package oop1;
 
-class Person {
+abstract class Person {
 	protected String name, email;
 
 	public Person(String name, String email) {
@@ -16,6 +16,8 @@ class Person {
 	public String getEmail() {
 		return this.email;
 	}
+	
+	public abstract String getOccupation();  
 }
 
 class Employee extends Person {
@@ -36,7 +38,11 @@ class Employee extends Person {
 	public void setJob(String job) {
 		this.job = job; 
 	}
-
+	
+	@Override
+	public String getOccupation() {
+		return "Working as " + this.job; 
+	}
 }
 
 class Student extends Person {
@@ -53,31 +59,28 @@ class Student extends Person {
 		super.print(); // super class's print()
 		System.out.println(this.course);
 	}
+	
+	public String getOccupation() {
+		return "Studying " + this.course; 
+	}
+
 }
 
 public class TestPersons {
 
 	public static void main(String[] args) {
-		Employee e = new Employee("Jack", "jack@gmail.com", "Programmerr");
-		e.setJob("Sr. Programmer");
-		e.print();
-		System.out.println(e.getEmail());
+		Person p = new Employee("Jack", "jack@gmail.com", "Programmerr");
+		p.print();  // Runtime Polymorphism
+		System.out.println(p.getOccupation());
 		
-	    Person p;
-	    p = e;   // Upcasting 
-	    
-	    p = new Student("Joe", "joe@gmail.com", "MSCS");
-	    
-	    if(p instanceof Employee)
-	        e = (Employee) p;  // Downcasting 
-	    
-	    // Check and convert 
-	    if(p instanceof Student s)
-	    {
-	    	s.print(); 
-	    }
-	    	
-
+		
+		p = new Student("Scott", "scott@gmail.com", "MSCS");
+		p.print();  // Runtime Polymorphism
+		System.out.println(p.getOccupation());
+		
+		// Compile-time polymorphism
+		System.out.println(10);
+		System.out.println(10.50);
 	}
 
 }
