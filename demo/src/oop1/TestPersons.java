@@ -16,8 +16,8 @@ abstract class Person {
 	public String getEmail() {
 		return this.email;
 	}
-	
-	public abstract String getOccupation();  
+
+	public abstract String getOccupation();
 }
 
 class Employee extends Person {
@@ -34,14 +34,14 @@ class Employee extends Person {
 		super.print(); // super class's print()
 		System.out.println(this.job);
 	}
-	
+
 	public void setJob(String job) {
-		this.job = job; 
+		this.job = job;
 	}
-	
+
 	@Override
 	public String getOccupation() {
-		return "Working as " + this.job; 
+		return "Working as " + this.job;
 	}
 }
 
@@ -59,9 +59,9 @@ class Student extends Person {
 		super.print(); // super class's print()
 		System.out.println(this.course);
 	}
-	
+
 	public String getOccupation() {
-		return "Studying " + this.course; 
+		return "Studying " + this.course;
 	}
 
 }
@@ -69,15 +69,15 @@ class Student extends Person {
 public class TestPersons {
 
 	public static void main(String[] args) {
+
 		Person p = new Employee("Jack", "jack@gmail.com", "Programmerr");
-		p.print();  // Runtime Polymorphism
+		p.print(); // Runtime Polymorphism
 		System.out.println(p.getOccupation());
-		
-		
+
 		p = new Student("Scott", "scott@gmail.com", "MSCS");
-		p.print();  // Runtime Polymorphism
+		p.print(); // Runtime Polymorphism
 		System.out.println(p.getOccupation());
-		
+
 		// Compile-time polymorphism
 		System.out.println(10);
 		System.out.println(10.50);
