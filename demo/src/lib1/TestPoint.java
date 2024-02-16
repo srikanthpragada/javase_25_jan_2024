@@ -18,9 +18,6 @@ public class TestPoint {
 		System.out.println(p1.equals(p2));
 		System.out.println(p1.x());   // getter method 
 		p1.print(); 
-		
-		
 
 	}
-
 }
