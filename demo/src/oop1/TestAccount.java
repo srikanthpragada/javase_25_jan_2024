@@ -28,7 +28,7 @@ class Account {
 		if (this.balance - Account.minbal >= amount)
 			this.balance -= amount;
 		else
-			System.out.println("Insufficient Balance!");
+			throw new IllegalArgumentException("Insufficient Balance!");
 	}
 
 	public double getBalance() {
@@ -53,6 +53,7 @@ public class TestAccount {
 	public static void main(String[] args) {
 		Account a1 = new Account(1, "Jack", 10000);
 		a1.deposit(5000);
+		a1.withdraw(20000);
 		System.out.println(a1.getBalance());
 		System.out.println(Account.getMinbal());
 	}
