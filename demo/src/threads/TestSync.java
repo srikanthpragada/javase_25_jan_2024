@@ -1,7 +1,7 @@
 package threads;
 
 class Data {
-	 synchronized public void print() {
+	 synchronized void print() {
 		for (int i = 1; i <= 5; i++) {
 			System.out.println(i);
 			try {
